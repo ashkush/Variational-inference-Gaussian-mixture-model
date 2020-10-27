@@ -135,7 +135,7 @@ class VI_GMM(prior_initilisation):
         def first_term(nk,sk,xk):
             expectation = 0
             for k in range(self.k):
-                expectation+=nk[k]*(self.ln_precision(k)-self.D/self.beta[k]-self.nu[k]*np.trace(np.dot(sk[k],np.linalg.inv(self.w_inv[k]))-                                         self.nu[k]*np.dot(np.dot(xk[k]-self.m[k],self.w_inv[k]),xk[k]-self.m[k])-                                          self.D*np.log(2*math.pi)))
+                expectation+=nk[k]*(self.ln_precision(k)-self.D/self.beta[k]-self.nu[k]*np.trace(np.dot(sk[k],np.linalg.inv(self.w_inv[k]))-self.nu[k]*np.dot(np.dot(xk[k]-self.m[k],self.w_inv[k]),xk[k]-self.m[k])-                                          self.D*np.log(2*math.pi)))
                 
             return expectation*.5
         
